@@ -1,3 +1,12 @@
+function getRandomHexColor() {
+  const chars = '0123456789abcdef';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return color;
+}
+
 const container = document.querySelector(".container")
 
 for (let i = 0; i < 16; i++){
@@ -5,7 +14,7 @@ for (let i = 0; i < 16; i++){
         const div = document.createElement("div");
 
         div.addEventListener('mouseenter', () => {
-            div.style.backgroundColor = 'lightblue';
+            div.style.backgroundColor = getRandomHexColor();
         });
 
         container.appendChild(div);
@@ -34,7 +43,7 @@ btn.addEventListener("click", () => {
             const div = document.createElement("div");
 
             div.addEventListener('mouseenter', () => {
-                div.style.backgroundColor = 'lightblue';
+                div.style.backgroundColor = getRandomHexColor();
             });
 
             container.appendChild(div);
